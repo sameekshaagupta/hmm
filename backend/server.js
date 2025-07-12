@@ -11,15 +11,12 @@ const app = express();
 
 // ✅ Proper CORS setup
 app.use(cors({
-<<<<<<< HEAD
   origin: 'http://localhost:8080',
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-=======
+  allowedHeaders: ['Content-Type', 'Authorization'],
   origin: 'http://localhost:8080', 
   credentials: true  
->>>>>>> e3403eb94245b615d82e230cf51b9f009954a2bb
 }));
 
 app.use(express.json());
