@@ -1,0 +1,157 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Purple-themed ReWear Design System */
+
+@layer base {
+  :root {
+    --background: 270 100% 98%;           /* Pale Lilac */
+    --foreground: 238 64% 20%;            /* Charcoal */
+
+    --card: 0 0% 100%;                    /* Pure white */
+    --card-foreground: 238 64% 20%;       /* Charcoal */
+
+    --popover: 0 0% 100%;                 /* Pure white */
+    --popover-foreground: 238 64% 20%;    /* Charcoal */
+
+    --primary: 262 83% 58%;               /* Violet Purple */
+    --primary-foreground: 0 0% 100%;      /* White */
+
+    --secondary: 270 100% 87%;            /* Soft Lavender */
+    --secondary-foreground: 238 64% 20%;  /* Charcoal */
+
+    --muted: 270 100% 87%;                /* Soft Lavender */
+    --muted-foreground: 215 28% 51%;      /* Slate Gray */
+
+    --accent: 330 81% 60%;                /* Magenta Pink */
+    --accent-foreground: 0 0% 100%;       /* White */
+
+    --destructive: 0 84% 60%;             /* Red for errors */
+    --destructive-foreground: 0 0% 100%;  /* White */
+
+    --border: 270 50% 88%;                /* Light lavender border */
+    --input: 270 50% 88%;                 /* Light lavender input */
+    --ring: 262 83% 58%;                  /* Violet Purple ring */
+
+    --radius: 0.75rem;                    /* Rounded corners */
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 238 64% 20%;
+    --sidebar-primary: 262 83% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 270 100% 87%;
+    --sidebar-accent-foreground: 238 64% 20%;
+    --sidebar-border: 270 50% 88%;
+    --sidebar-ring: 262 83% 58%;
+  }
+
+  .dark {
+    --background: 238 64% 8%;             /* Dark charcoal */
+    --foreground: 270 100% 87%;           /* Soft Lavender */
+
+    --card: 238 50% 12%;                  /* Dark card */
+    --card-foreground: 270 100% 87%;      /* Soft Lavender */
+
+    --popover: 238 50% 12%;               /* Dark popover */
+    --popover-foreground: 270 100% 87%;   /* Soft Lavender */
+
+    --primary: 262 83% 68%;               /* Brighter violet */
+    --primary-foreground: 238 64% 8%;     /* Dark charcoal */
+
+    --secondary: 238 50% 15%;             /* Dark secondary */
+    --secondary-foreground: 270 100% 87%; /* Soft Lavender */
+
+    --muted: 238 50% 15%;                 /* Dark muted */
+    --muted-foreground: 215 28% 65%;      /* Medium slate */
+
+    --accent: 330 81% 70%;                /* Brighter magenta */
+    --accent-foreground: 238 64% 8%;      /* Dark charcoal */
+
+    --destructive: 0 75% 55%;             /* Darker red */
+    --destructive-foreground: 270 100% 87%; /* Soft Lavender */
+
+    --border: 238 50% 18%;                /* Dark border */
+    --input: 238 50% 18%;                 /* Dark input */
+    --ring: 262 83% 68%;                  /* Brighter violet ring */
+
+    --sidebar-background: 238 64% 8%;
+    --sidebar-foreground: 270 100% 87%;
+    --sidebar-primary: 262 83% 68%;
+    --sidebar-primary-foreground: 238 64% 8%;
+    --sidebar-accent: 238 50% 15%;
+    --sidebar-accent-foreground: 270 100% 87%;
+    --sidebar-border: 238 50% 18%;
+    --sidebar-ring: 262 83% 68%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins font-semibold text-charcoal-900;
+  }
+}
+
+@layer components {
+  .purple-gradient {
+    @apply bg-gradient-to-br from-purple-50 via-purple-100/50 to-magenta-50/30;
+  }
+
+  .purple-card {
+    @apply bg-white/90 backdrop-blur-sm border border-purple-200/50 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02];
+  }
+
+  .purple-button-primary {
+    @apply bg-purple-600 hover:bg-gradient-to-r hover:from-purple-600 hover:to-indigo-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5;
+  }
+
+  .purple-button-secondary {
+    @apply bg-purple-200 hover:bg-purple-300 text-purple-700 px-6 py-3 rounded-xl font-semibold transition-all duration-200 border border-purple-300 hover:border-purple-400;
+  }
+
+  .purple-button-outline {
+    @apply bg-transparent hover:bg-purple-50 text-purple-600 px-6 py-3 rounded-xl font-semibold transition-all duration-200 border-2 border-purple-300 hover:border-purple-500;
+  }
+
+  .points-badge {
+    @apply bg-gradient-to-r from-plum-400 to-plum-500 text-white px-3 py-1 rounded-full text-sm font-medium shadow-sm;
+  }
+
+  .status-badge {
+    @apply px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wide;
+  }
+
+  .status-available {
+    @apply bg-plum-100 text-plum-700 border border-plum-200;
+  }
+
+  .status-pending {
+    @apply bg-purple-100 text-purple-700 border border-purple-200;
+  }
+
+  .status-swapped {
+    @apply bg-slate-100 text-slate-600 border border-slate-200;
+  }
+
+  .heart-liked {
+    @apply text-magenta-500 fill-current animate-pulse-glow;
+  }
+
+  .filter-chip-active {
+    @apply bg-purple-600 text-white border-purple-600;
+  }
+
+  .filter-chip-inactive {
+    @apply bg-white text-purple-600 border-purple-300 hover:border-purple-500 hover:bg-purple-50;
+  }
+}
