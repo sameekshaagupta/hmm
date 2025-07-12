@@ -11,12 +11,10 @@ const app = express();
 
 // ✅ Proper CORS setup
 app.use(cors({
-  origin: 'http://localhost:8080',
+  origin: 'https://rewear-six.vercel.app',
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  origin: 'http://localhost:8080', 
-  credentials: true  
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 app.use(express.json());
